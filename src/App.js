@@ -1,4 +1,5 @@
 import "./App.css";
+import ControlledForm from "./ControlledForm";
 import DessertsList from "./DessertsList";
 import Form from "./Form";
 
@@ -31,6 +32,7 @@ function App() {
       <h2>List of low calorie desserts:</h2>
       <DessertsList data={desserts} />
       <Form/>
+      <ControlledForm />
     </div>
   );
 }
