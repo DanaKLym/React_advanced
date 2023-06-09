@@ -19,23 +19,24 @@ function ControlledForm() {
   const [role, setRole] = useState("role");
 
   const changePassword = (e) => {
-    setPassword({...password, isTouched: true});
-    //finish
+    
+    //resolve
   }
 
   const getIsFormValid = (e) => {
-    if(!firstName && !email && password.lenth < 8) {
-        return true;
-    } else {
+    if(!firstName && !lastName && !email && (password.value.length < 8) && (role === "role")) {
         return false;
+    } else {
+      
+        return true;
     }
-    //resolve
   };
 
   const clearForm = () => {
     setFirstName("");
     setLastName("");
     setEmail("");
+    setRole("role");
    //finish
   };
 
@@ -76,7 +77,7 @@ function ControlledForm() {
             <label>
               Role <sup>*</sup>
             </label>
-            <select>
+            <select value={role} onChange={(e) => setRole(e.target.value)}>
               <option value="role">Role</option>
               <option value="individual">Individual</option>
               <option value="business">Business</option>
