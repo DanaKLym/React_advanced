@@ -1,3 +1,20 @@
 .App {
   padding: 16px;
 }
+
+.Form {
+  width: 400px
+}
+
+.Form label {
+  margin: 5px;
+}
+
+.Form div.fieldset {
+  margin: 8px;
+}
+
+.Form button {
+  display: block;
+  margin: auto;
+}
