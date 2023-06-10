@@ -19,17 +19,17 @@ function ControlledForm() {
   const [role, setRole] = useState("role");
 
   const changePassword = (e) => {
-    
-    //resolve
+    setPassword({...password, value: e.target.value});
   }
 
   const getIsFormValid = (e) => {
-    if(!firstName && !lastName && !email && (password.value.length < 8) && (role === "role")) {
-        return false;
+    if(firstName && lastName) {
+      return true;
     } else {
       
-        return true;
+        return false;
     }
+    //resolve
   };
 
   const clearForm = () => {
@@ -37,7 +37,10 @@ function ControlledForm() {
     setLastName("");
     setEmail("");
     setRole("role");
-   //finish
+   setPassword({...password,
+    value: "",
+    isTouched: false,
+   });
   };
 
   const handleSubmit = (e) => {
@@ -71,7 +74,8 @@ function ControlledForm() {
             <label>
               Password <sup>*</sup>
             </label>
-            <input value={password} onChange={changePassword} placeholder="Password" type="password"/>
+            <input value={password.value} onChange={changePassword} placeholder="Password" type="password"/>
+            {password.value.length < 8 && !password.isTouched ? <PasswordErrorMessage/> : null}
           </div>
           <div className="Field">
             <label>
