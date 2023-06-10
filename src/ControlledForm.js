@@ -22,14 +22,17 @@ function ControlledForm() {
     setPassword({...password, value: e.target.value});
   }
 
-  const getIsFormValid = (e) => {
-    if(firstName && lastName) {
+  //to check if the user clicked on the field at least once, in the HTML code we call this function within the onBlur event, which is called whenever the input loses focus, so that guarantees the user has interacted with the password input at least once
+  const isUserInteracted = () => {
+    setPassword({...password, isTouched: true});
+  }
+
+  const getIsFormValid = () => {
+    if(firstName && lastName && validateEmail(email) && (password.value.length >= 8) && (role === "individual" || role === "business")) {
       return true;
     } else {
-      
         return false;
-    }
-    //resolve
+    };
   };
 
   const clearForm = () => {
@@ -74,8 +77,8 @@ function ControlledForm() {
             <label>
               Password <sup>*</sup>
             </label>
-            <input value={password.value} onChange={changePassword} placeholder="Password" type="password"/>
-            {password.value.length < 8 && !password.isTouched ? <PasswordErrorMessage/> : null}
+            <input value={password.value} onChange={changePassword} onBlur={isUserInteracted} placeholder="Password" type="password"/>
+            {password.isTouched && password.value.length < 8 ? <PasswordErrorMessage/> : null}
           </div>
           <div className="Field">
             <label>
