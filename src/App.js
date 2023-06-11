@@ -2,6 +2,7 @@ import "./App.css";
 import ControlledForm from "./ControlledForm";
 import DessertsList from "./DessertsList";
 import Form from "./Form";
+import ComponentStateManagement from "./ComponentStateManagement"
 
 const desserts = [
   {
@@ -33,6 +34,7 @@ function App() {
       <DessertsList data={desserts} />
       <Form/>
       <ControlledForm />
+      <ComponentStateManagement />
     </div>
   );
 }
