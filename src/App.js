@@ -2,7 +2,8 @@ import "./App.css";
 import ControlledForm from "./ControlledForm";
 import DessertsList from "./DessertsList";
 import Form from "./Form";
-import ComponentStateManagement from "./ComponentStateManagement"
+import ComponentStateManagement from "./ComponentStateManagement";
+import StateHookPractice from "./StateHookPractice";
 
 const desserts = [
   {
@@ -35,6 +36,7 @@ function App() {
       <Form/>
       <ControlledForm />
       <ComponentStateManagement />
+      <StateHookPractice />
     </div>
   );
 }
