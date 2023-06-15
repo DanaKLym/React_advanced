@@ -5,6 +5,7 @@ import Form from "./Form";
 import ComponentStateManagement from "./ComponentStateManagement";
 import StateHookPractice from "./StateHookPractice";
 import FetchingData from "./FetchingData";
+import CustomHooks from "./CustomHooks";
 
 const desserts = [
   {
@@ -39,6 +40,7 @@ function App() {
       <ComponentStateManagement />
       <StateHookPractice />
       <FetchingData />
+      <CustomHooks />
     </div>
   );
 }
