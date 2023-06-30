@@ -18,4 +18,4 @@ function ReactAPI() {
   );
 }
 
-export default App;
+export default ReactAPI;
