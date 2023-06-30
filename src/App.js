@@ -6,6 +6,7 @@ import ComponentStateManagement from "./ComponentStateManagement";
 import StateHookPractice from "./StateHookPractice";
 import FetchingData from "./FetchingData";
 import CustomHooks from "./CustomHooks";
+import ReactAPI from "./ReactAPI";
 
 const desserts = [
   {
@@ -41,6 +42,7 @@ function App() {
       <StateHookPractice />
       <FetchingData />
       <CustomHooks />
+      <ReactAPI/>
     </div>
   );
 }
